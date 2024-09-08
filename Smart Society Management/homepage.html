@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Smart Society Management</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <style>
+
+            /* CSS for responsive design */
+            @media only screen and (max-width: 1542px) {}
+             @media only screen and (max-width: 992px) {}
+             @media only screen and (max-width: 768px) {}
+             @media only screen and (max-width: 480px) {}
+                
+                /* Adjustments for smaller screens */
+            /* CSS for the outer container */
+        .top-container {
+            background-color: #FFFFFF; /* Background color of the outer container */
+            padding: 20px; /* Padding around the content inside the outer container */
+            height: 150px;
+            text-align: center; /* Center-align the content */
+            display: flex;
+            flex-direction: column; /* Stack child elements vertically */
+            justify-content: flex-start;
+        }
+
+        /* CSS for the inner container */
+        .inner-container {
+            background-color: #00008B; /* Background color of the inner container (blue) */
+            color: #fff; /* Text color inside the inner container (white) */
+            padding: 1px; /* Padding around the content inside the inner container */
+            width: 100%; /* Make the inner container width equal to the outer container */
+            display: flex;
+            justify-content: flex-end; /* Align child elements to the right */
+            align-items: center;
+        }
+
+        /* CSS for the navbar */
+        .navbar {
+            padding: 1px 20px; /* Padding top and bottom, and left and right */
+            display: flex;
+        }
+
+        /* CSS for the logo image */
+        .logo {
+            
+            width: 150px; /* Set the width of the logo */
+            height: 120px; /* Automatically adjust the height to maintain aspect ratio */
+        }
+
+        /* CSS for the login and signup button box */
+        .loginsignupButtons {
+            padding : 1px;
+            display: flex; /* Use flexbox for a horizontal layout */
+            justify-content: space-between; /* Distribute space between button boxes */
+        }
+
+        /* CSS for the login button box */
+        .loginBox {
+            background-color: #ffffff; /* Background color of the button box */
+            border: 1px solid #00008B; /* Border around the button box */
+            padding: 15px; /* Reduced padding inside the button box */
+            margin: 20px; /* Remove default margin to eliminate extra spacing */
+            box-sizing: border-box; /* Include padding and border in box size */
+            height : 10px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 15px;
+            display: flex; /* Use flexbox to center vertically and horizontally */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            width : 100px;
+            border-radius: 10%; /* Make corners circular */
+        }
+
+        /* CSS for the signup button box */
+        .signupBox {
+            background-color: #ffffff; /* Background color of the button box */
+            border: 1px solid #00008B; /* Border around the button box */
+            padding: 15px; /* Reduced padding inside the button box */
+            margin: 20px; /* Remove default margin to eliminate extra spacing */
+            box-sizing: border-box; /* Include padding and border in box size */
+            height : 10px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 15px;
+            display: flex; /* Use flexbox to center vertically and horizontally */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            width : 100px;
+            border-radius: 10%; /* Make corners circular */
+        }
+
+        /* CSS for the menu */
+        .menu {
+            padding: 40px 20px; /* Padding top and bottom, and left and right */
+            display: flex;
+            justify-content: flex-end; /* Align menu links to the right */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10.5px;
+        }
+
+        /* CSS for the hyperlink style */
+        .hyperlink {
+            margin-left: 20px; /* Add spacing between menu links */
+            text-decoration: none;
+            font-weight: bold; /* Make the text bold */
+            color: #0000FF;
+           
+        }
+
+        /* CSS for hyperlink hover effect */
+        .hyperlink:hover {
+            color: rgb(11, 229, 236); /* Change the text color to red on hover */
+        }
+
+        /* CSS for the container of navbar and menu */
+        .nav-menu-container {
+            display: flex;
+            justify-content: space-between; /* Push navbar and menu to the sides */
+            width: 100%; /* Ensure full width within the top container */
+        }
+
+        /* CSS for the slideshow container */
+        .slideshow-container {
+            padding : 70px 20px;
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        /* CSS for the slideshow images */
+        .slideshow-image {
+            display: none;
+            width: 100%;
+            height : 450px;
+        }
+
+        /* CSS for the navigation buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
+
+        /* Position the previous button to the left */
+        .prev {
+            left: 0;
+        }
+
+        /* Position the next button to the right */
+        .next {
+            right: 0;
+        }
+
+        /* Change color on hover */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* CSS for the About Us section box */
+        .aboutUsBox {
+            padding-top: 200px;
+            background-color: #f2f2f2; /* Background color of the box */
+            border: 1px solid #ccc; /* Border around the box */
+            padding: 10px; /* Padding inside the box */
+            width: 100%;
+        }
+
+        /*CSS for the About Us section */
+        .aboutUs {
+            padding-top: 100px;
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* CSS for the Features section box */
+        .featuresBox {
+            padding-top: 200px;
+            background-color: #f2f2f2; /* Background color of the box */
+            border: 1px solid #ccc; /* Border around the box */
+            padding: 50px; /* Padding inside the box */
+            width: 100%;
+        }
+
+         /*CSS for the Features section */
+         .features {
+            padding-top: 100px;
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        /* CSS for Feature boxes */
+        .featuresBoxes {
+            display: flex; /* Use flexbox for a horizontal layout */
+            justify-content: space-between; /* Distribute space between feature boxes */
+        }
+
+        .featureBox {
+            flex: 0 1 calc(33.33% - 20px); /* Make each feature box one-third of the container width with some spacing */
+            background-color: #ffffff; /* Background color of the feature box */
+            border: 1px solid #ccc; /* Border around the feature box */
+            padding: 15px; /* Reduced padding inside the feature box */
+            text-align: center;
+            margin: 20px; /* Remove default margin to eliminate extra spacing */
+            box-sizing: border-box; /* Include padding and border in box size */
+            overflow: hidden; /* Hide overflowing content if needed */
+        }
+
+        .featureIcon img {
+            max-width: 100%; /* Allow the image to fill the circular container */
+            height: 100px;
+            border-radius: 50%; /* Apply the circular border to the image */
+        }
+
+        .featureBox h2 {
+            font-size: 14px; /* Font size for the feature title */
+            color: #0000FF; /* Text color for the feature title */
+        }
+
+        .featureBox p {
+            font-size: 12px; /* Reduce the font size for the feature description */
+            color: #333; /* Text color for the feature description */
+            overflow: hidden; /* Hide overflowing text if needed */
+            text-overflow: ellipsis; /* Add ellipsis (...) for long descriptions */
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        /* CSS for the Benefits section box */
+        .benefitsBox {
+            padding-top: 200px;
+            background-color: #f2f2f2; /* Background color of the box */
+            border: 1px solid #ccc; /* Border around the box */
+            padding: 50px; /* Padding inside the box */
+            width: 100%;
+        }
+
+         /* CSS for the Benefits title */
+         .benefitsTitle {
+            padding-top: 100px;
+            text-align: center; /* Align text to the center within the benefits section */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* CSS for the Benefits section */
+        .benefits {
+            text-align: left; /* Align text to the center within the benefits section */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* CSS for Benefits contents */
+        .benefitsContents {
+            display: flex; /* Use flexbox for a horizontal layout */
+            justify-content: space-around; 
+        }
+
+        /* CSS for each Benefits content */
+        .benefitsContent {
+            flex: 0 1 calc(33.33% - 20px); /* Make each feature box one-third of the container width with some spacing */
+            padding: 15px; /* Reduced padding inside the feature box */
+            padding-top: 100px;
+            
+            
+        }
+
+        /* CSS for the Contact Us section box */
+        .contactUsBox {
+            padding-top: 200px;
+            border: 1px solid #ccc; /* Border around the box */
+            background-color: #f2f2f2; /* Background color of the box */
+            padding: 10px; /* Padding inside the box */
+            width: 100%;
+        }
+
+        /*CSS for the Contact Us section */
+        .contactUs {
+            padding-top: 100px;
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        /*CSS for the Partners section box*/
+        .partnersBox {
+            padding-top: 200px;
+            border: 1px solid #ccc; /* Border around the box */
+            background-color: #f2f2f2; /* Background color of the box */
+            padding: 10px; /* Padding inside the box */
+            width: 100%;
+        }
+
+        /*CSS for the Partners section */
+        .partners {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        /* CSS for the footer */
+        .footer {
+            padding-top: 500px;
+            display: flex; /* Use flexbox for a horizontal layout */
+            justify-content: space-between; /* Distribute space between feature boxes */
+            background-color: #000000; /* Background color of the footer */
+            color: #fff; /* Text color inside the footer (white) */
+            text-align: center; /* Center-align the content */
+            padding: 10px; /* Padding around the content inside the footer */
+            height : 300px;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px; /* Set a maximum width for the footer content */
+            margin: 0 auto; /* Center the footer content horizontally */
+        }
+
+        /* Style links in the footer */
+        .footer a {
+            color: #fff; /* Text color for links */
+            text-decoration: none; /* Remove underlines from links */
+        }
+
+        /* CSS for Gmail */
+        .gmail {
+            text-align: center;
+
+        }
+
+        .gmail img {
+            vertical-align: middle;
+        }
+
+        /* CSS for the social media logos */
+        .socialMediaLogo {
+            vertical-align: middle;
+        }
+
+        /* CSS for the social media logo images */
+        .socialMediaLogo img {
+            height : 25px;
+            width : 25px;
+        }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Top container -->
+        <div class="top-container" id="top-container">
+            <!-- Blue-colored inner container -->
+            <div class="inner-container">
+                <div class="loginsignupButtons">
+                    <!--Log in button and Sign up button-->
+                    <a href="login.html" class="hyperlink"><div class="loginBox">Log In</div></a>
+                    <a href="signup.html" class="hyperlink"><div class="signupBox">Sign Up</div></a>
+                    
+                </div>
+            </div>
+                
+            <!-- Navbar and Menu Container -->
+            <div class="nav-menu-container">
+                <!-- Navbar -->
+                <div class="navbar">
+                    <a href="#top-container">
+                        <!-- Logo image -->
+                        <img src="logo.png" alt="Company Logo" class="logo">
+                    </a>
+                </div>
+            
+
+            <!-- Menu -->
+
+            <div class="menu">
+                <a href="#top-container" class="hyperlink">HOME</a>
+                <a href="#aboutUs" class="hyperlink">ABOUT US</a>
+                <a href="#features" class="hyperlink">FEATURES</a>
+                <a href="#benefits" class="hyperlink">BENEFITS</a>
+                <a href="#pricing" class="hyperlink">PRICING</a>
+                <a href="#successStories" class="hyperlink">SUCCESS STORIES</a>
+                <a href="#contactUs" class="hyperlink">CONTACT US</a>
+                <a href="#partners" class="hyperlink">PARTNERS</a>
+            
+            </div>
+        </div>
+    </div>   
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+                <!-- Slideshow images -->
+                <img class="slideshow-image" src="slideshow1.jpg" alt="Image 1">
+                <img class="slideshow-image" src="slideshow2.jpg" alt="Image 2">
+                <img class="slideshow-image" src="slideshow3.png" alt="Image 3">
+                <!-- Add more images as needed -->
+
+                <!-- Navigation buttons -->
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+
+        <!-- About Us -->
+
+        <div class="aboutUsBox" id="aboutUs">
+            <div class="aboutUs">
+                <h1 style="color: blue;">About Us</h1>
+                <br><br>
+                <img src="aboutUs.jpg" width="600" height="300" alt="About Us">
+                <p>Welcome to Smart Society Management, your trusted partner in transforming the way associations and societies are handled. Smart Society Management is your complete association management solution, with a dedication to streamlining operations, improving communication, and encouraging community engagement. Smart Society Management envisions a future in which every organisation and society may thrive through efficient, technology-driven management. Our mission is to provide communities with the tools they need to develop lively, connected, and harmonious ecosystems. We are a group of devoted professionals who understand the specific issues that associations, housing societies, and community organizations encounter. With years of experience in both technology and community management, we've created a system that combines the best of both worlds.<p>
+            </div>
+        </div>
+
+        <!-- Features -->
+
+        <div class="featuresBox" id="features">
+            <div class="features">
+                <h1 style="color: blue;">Features</h1>
+                <br> <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="visitors.jpg" alt="Feature Icon 1">
+                            </div>
+                            <h2>Visitors</h2>
+                            <p>Manage visitors</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="profile.png" alt="Feature Icon 2">
+                            </div>
+                            <h2>Profile</h2>
+                            <p>Manage member profiles</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="familyinfo.jpg" alt="Feature Icon 3">
+                            </div>
+                            <h2>Family Info</h2>
+                            <p>Manage family information</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="appointment.png" alt="Feature Icon 1">
+                            </div>
+                            <h2>Appointment</h2>
+                            <p>Schedule appointment</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="events.png" alt="Feature Icon 2">
+                            </div>
+                            <h2>Events</h2>
+                            <p>Manage events</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="parking.png" alt="Feature Icon 3">
+                            </div>
+                            <h2>Parking</h2>
+                            <p>Manage parking</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="committee.webp" alt="Feature Icon 1">
+                            </div>
+                            <h2>Committee</h2>
+                            <p>Manage committee, committee members</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="evoting.png" alt="Feature Icon 2">
+                            </div>
+                            <h2>E-voting</h2>
+                            <p>Manage e-voting for committee elections</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="training.png" alt="Feature Icon 3">
+                            </div>
+                            <h2>Training</h2>
+                            <p>Manage training courses</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="finance.jpg" alt="Feature Icon 1">
+                            </div>
+                            <h2>Finance</h2>
+                            <p>Manage finances</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="accounting.jpg" alt="Feature Icon 2">
+                            </div>
+                            <h2>Accounting</h2>
+                            <p>Manage voucher, online receipts etc.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="loan.png" alt="Feature Icon 3">
+                            </div>
+                            <h2>Loan</h2>
+                            <p>Manage loans</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="audit.png" alt="Feature Icon 1">
+                            </div>
+                            <h2>Audit</h2>
+                            <p>Manage audits</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="payment.jpg" alt="Feature Icon 2">
+                            </div>
+                            <h2>Payment</h2>
+                            <p>Online Banking, Credit/Debit card, Payslip</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="communication.png" alt="Feature Icon 3">
+                            </div>
+                            <h2>Communication</h2>
+                            <p>Distribute email and newsletter to members</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="administration.png" alt="Feature Icon 1">
+                            </div>
+                            <h2>Administration</h2>
+                            <p>Customize user roles and permissions</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="helpdesk.png" alt="Feature Icon 2">
+                            </div>
+                            <h2>Help Desk</h2>
+                            <p>Solve problems and take feedbacks</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="featureBox">
+                            <div class="featureIcon">
+                                <!-- Add your feature icon image here -->
+                                <img src="reporting&analytics.png" alt="Feature Icon 3">
+                            </div>
+                            <h2>Reporting & Analytics</h2>
+                            <p>Generate reports & provide analytics</p>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+
+        <!-- Benefits -->
+
+        <div class="benefitsBox" id="benefits">
+            <div class="benefitsTitle">
+                <h1 style="color: blue;">Benefits</h1>
+            </div>
+            <div class="benefits">
+                <div class="benefitsContents">
+                    <div class="benefitsContent">
+                        <h2><img src="tick.png" width="20" height="20">Improved visitor management and security</h2>
+                        <img src="benefit1.gif" width="250" height="250">
+
+                        <h2><img src="tick.png" width="20" height="20">Efficient Administration and Process Streamlining</h2> 
+                        <img src="benefit2.gif" width="250" height="250"> 
+                    </div>
+                    <div class="benefitsContent">
+                        <h2><img src="tick.png" width="20" height="20">Increased Communication and Participation</h2> 
+                        <img src="benefit3.gif" width="250" height="250"> 
+                
+                        <h2><img src="tick.png" width="20" height="20">Financial Management and Transparency</h2>
+                        <img src="benefit4.gif" width="250" height="250">
+                    </div>
+                </div>
+            </div>
+
+        
+        <!-- Contact Us -->
+        <div class="contactUsBox" id="contactUs">
+            <div class="contactUs">
+                <h1 style="color: blue;">Contact Us</h1>
+                <br> <br>
+                <p>
+                    <h3>Contact Details</h3>
+                    <b style="color: blue;">Hotline : </b>+8801988224411 <br>
+                    <b style="color: blue;">Email : </b>info@ositsltd.com <br>
+                    <b style="color: blue;">Website : </b>www.ositsltd.com <br><br>
+
+                    <h3>Office Locations</h3>
+                    <b style="color: blue;">Corporate Office : </b>31/1, Sharif Complex, L 9, Purana Paltan Dhaka-1000.<br>
+                    <b style="color: blue;">R & D Office : </b>Suit 704, 6th Floor, TTI (Tools and Technology Institute)
+                    Bhaban, BITAC, Tejgoan I/A, Dhaka-1208.
+                <p>
+
+            </div>
+        </div>
+
+        <!-- Partners -->
+        
+        <div class="partnersBox" id="partners">
+            <div class="partners">
+                <h1 style="color: blue;">Partners</h1>
+                <br> <br>
+                <img src="partner1.jpg" width="200px" height="100px" alt="Image 1">
+                <img src="partner2.jpg" width="200px" height="100px" alt="Image 2">
+                <img src="partner3.jpg" width="200px" height="100px" alt="Image 3">
+                <img src="partner4.jpg" width="200px" height="100px" alt="Image 4">
+                <img src="partner5.jpg" width="200px" height="100px" alt="Image 5">
+                <img src="partner6.jpg" width="200px" height="100px" alt="Image 6">
+                <img src="partner7.jpg" width="200px" height="100px" alt="Image 7">
+                <img src="partner8.jpg" width="200px" height="100px" alt="Image 8">
+                <img src="partner9.jpg" width="200px" height="100px" alt="Image 9">
+            </div>
+        </div>
+
+        <!-- Footer -->
+
+        <div class="footer">
+
+            <div class="footer-content">
+                <a href="#top-container" class="hyperlink">Home</a> <br> <br> <br>
+                <a href="#aboutUs" class="hyperlink">About Us</a> <br> <br> <br>
+                <a href="#features" class="hyperlink">Features</a> <br> <br> <br>
+                <a href="#benefits" class="hyperlink">Benefits</a>
+            </div>
+
+            <div class="footer-content">
+                    <div class="gmail">
+                        <img src="gmaillogo.png" width="25px" height="25px" alt="Gmail" margin="1px"> &nbsp; info@ositsltd.com
+                    </div>
+                    <br><br><br>
+                    <div class="socialMediaLogo">
+                        <a href="https://www.linkedin.com/company/os-it-solutions-ltd/"><img src="linkedinlogo.png" alt="LinkedIn"></a> &nbsp; &nbsp;
+                        <a href="https://www.facebook.com/ositsltd"><img src="facebooklogo.png" alt="Facebook"></a> &nbsp; &nbsp;
+                        <a href="https://www.instagram.com/ositsltd/"><img src="instagramlogo.png" alt="Instagram"></a>
+                    </div>
+                    <br><br><br>
+                <p>&copy; 2023 <a href="https://www.ositsltd.com/" class="hyperlink">OS IT Solutions Ltd.</a></p>
+                <p>All Rights Reserved</p>
+            </div>
+
+            <div class="footer-content">
+                <a href="#pricing" class="hyperlink">Pricing</a> <br> <br> <br>
+                <a href="#successStories" class="hyperlink">Success Stories</a> <br> <br> <br>
+                <a href="#contactUs" class="hyperlink">Contact Us</a> <br> <br> <br>
+                <a href="#partners" class="hyperlink">Partners</a>
+            </div>
+        </div>
+        
+
+        <script>
+        
+        // JavaScript to handle the automatic slideshow
+        let slideIndex = 1;
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("slideshow-image");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Initial slide display
+        showSlides(slideIndex);
+
+        // Automatic slideshow timer (adjust the interval as needed)
+        setInterval(function () {
+                plusSlides(1); // Go to the next slide every 5 seconds
+            }, 5000);
+        </script>
+        
+    </body>
+</html>
